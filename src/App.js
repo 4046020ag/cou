@@ -1,25 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+
+
+import ListItem from "./Listitem";
+
 
 function App() {
+
+  const [list, setList] = useState([1, 2, 3, 4]);
+
+  const counterPlus = (index) => {
+
+    const newArr = list.map((el, i) => {
+      if (index === i) {
+        return el + 1
+      }
+
+      return el
+    })
+
+    setList(newArr)
+
+  }
+  const counterMinus = (index) => {
+
+    const newAr = list.map((el, i) => {
+      if (index === i) {
+        return el - 1
+      }
+
+      return el
+    })
+
+    setList(newAr)
+
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+
+        {list.map((el, index) => {
+          return <ListItem counterPlus={counterPlus} index={index} el={el}/>
+        }
+        {return <ListItem counterMinus={counterMinus} index={index} el={el}/>
+
+
+        })
+
+        }
+      </div>
   );
 }
 
