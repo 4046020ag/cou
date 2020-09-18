@@ -14,7 +14,9 @@ import React from "react";
 
     return (
         <div>
-            <button onClick={buttonMinusHandler}>-</button>
+            <button onClick={buttonMinusHandler}>-1</button>
+            <button onClick={buttonMinusHandler}>-2</button>
+            <button onClick={buttonMinusHandler}>-3</button>
             {counter}
             <button onClick={buttonPlusHandler}>+</button>
         </div>

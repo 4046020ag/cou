@@ -40,9 +40,7 @@ function App() {
       <div>
 
         {list.map((el, index) => {
-          return <ListItem counterPlus={counterPlus} index={index} el={el}/>
-        }
-        {return <ListItem counterMinus={counterMinus} index={index} el={el}/>
+          return <ListItem counterPlus={counterPlus} counterMinus={counterMinus} index={index} el={el}/>
 
 
         })
